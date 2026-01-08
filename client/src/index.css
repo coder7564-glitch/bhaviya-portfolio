@@ -1,0 +1,303 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Princess Theme: Deep Plum + Gold Accents */
+  --primary: #4A1A5C;
+  --primary-foreground: #FAF8F3;
+  --sidebar-primary: #4A1A5C;
+  --sidebar-primary-foreground: #FAF8F3;
+  --chart-1: #D4AF37;
+  --chart-2: #B8860B;
+  --chart-3: #8B6914;
+  --chart-4: #6B5310;
+  --chart-5: #4A1A5C;
+  --radius: 0.75rem;
+  --background: #FAF8F3;
+  --foreground: #2D1B3D;
+  --card: #FFFFFF;
+  --card-foreground: #2D1B3D;
+  --popover: #FFFFFF;
+  --popover-foreground: #2D1B3D;
+  --secondary: #E6D5F0;
+  --secondary-foreground: #4A1A5C;
+  --muted: #E6D5F0;
+  --muted-foreground: #6B4A7A;
+  --accent: #D4AF37;
+  --accent-foreground: #2D1B3D;
+  --destructive: #DC2626;
+  --destructive-foreground: #FAF8F3;
+  --border: #E6D5F0;
+  --input: #FFFFFF;
+  --ring: #D4AF37;
+  --sidebar: #FAF8F3;
+  --sidebar-foreground: #2D1B3D;
+  --sidebar-accent: #E6D5F0;
+  --sidebar-accent-foreground: #4A1A5C;
+  --sidebar-border: #E6D5F0;
+  --sidebar-ring: #D4AF37;
+}
+
+.dark {
+  --primary: #D4AF37;
+  --primary-foreground: #2D1B3D;
+  --sidebar-primary: #D4AF37;
+  --sidebar-primary-foreground: #2D1B3D;
+  --background: #1A0F24;
+  --foreground: #FAF8F3;
+  --card: #2D1B3D;
+  --card-foreground: #FAF8F3;
+  --popover: #2D1B3D;
+  --popover-foreground: #FAF8F3;
+  --secondary: #4A1A5C;
+  --secondary-foreground: #D4AF37;
+  --muted: #3D2A4A;
+  --muted-foreground: #B8A8C8;
+  --accent: #D4AF37;
+  --accent-foreground: #1A0F24;
+  --destructive: #EF4444;
+  --destructive-foreground: #FAF8F3;
+  --border: #3D2A4A;
+  --input: #2D1B3D;
+  --ring: #D4AF37;
+  --chart-1: #D4AF37;
+  --chart-2: #B8860B;
+  --chart-3: #8B6914;
+  --chart-4: #6B5310;
+  --chart-5: #4A1A5C;
+  --sidebar: #2D1B3D;
+  --sidebar-foreground: #FAF8F3;
+  --sidebar-accent: #3D2A4A;
+  --sidebar-accent-foreground: #D4AF37;
+  --sidebar-border: #3D2A4A;
+  --sidebar-ring: #D4AF37;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Lato', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+  }
+  
+  h1 {
+    @apply text-5xl md:text-6xl;
+    letter-spacing: -0.02em;
+  }
+  
+  h2 {
+    @apply text-4xl md:text-5xl;
+    letter-spacing: -0.01em;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  /**
+   * Custom container utility that centers content and adds responsive padding.
+   *
+   * This overrides Tailwind's default container behavior to:
+   * - Auto-center content (mx-auto)
+   * - Add responsive horizontal padding
+   * - Set max-width for large screens
+   *
+   * Usage: <div className="container">...</div>
+   *
+   * For custom widths, use max-w-* utilities directly:
+   * <div className="max-w-6xl mx-auto px-4">...</div>
+   */
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; /* 16px - mobile padding */
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem; /* 32px - desktop padding */
+      padding-right: 2rem;
+      max-width: 1280px; /* Standard content width */
+    }
+  }
+
+  /* Princess Theme Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes goldGlow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  .animate-gold-glow {
+    animation: goldGlow 2s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out;
+  }
+
+  /* Elegant hover effects */
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-2 shadow-lg;
+  }
+
+  .gold-border {
+    @apply border-accent;
+  }
+
+  .gold-text {
+    @apply text-accent;
+  }
+
+  /* Decorative divider */
+  .divider-gold {
+    @apply h-1 bg-gradient-to-r from-transparent via-accent to-transparent;
+  }
+}
